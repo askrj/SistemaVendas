@@ -1,0 +1,74 @@
+﻿@model RelatorioModel
+<h2>Vendas Por Produto</h2>
+
+<br />
+
+<form asp-controller="Relatorio" asp-action="Vendas">
+    <div class="form-group">
+        <label>Período</label>
+
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">Pesquisar </button>
+</form>
+
+<br />
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+
+            <td>Id</td>
+            <td>Data</td>
+            <td>Vendedor</td>
+            <td>Cliente</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            try
+            {
+                foreach (var item in (List<VendaModel>)ViewBag.ListaVendas)
+                {
+                <tr>
+
+                    <td>@item.Id</td>
+                    <td>@item.Data</td>
+                    <td>@item.Vendedor_Id</td>
+                    <td>@item.Cliente_Id</td>
+                    <td>@item.Total</td>
+                </tr>
+
+                    }
+
+                }
+                catch
+                {
+
+
+                }
+            }
+
+    </tbody>
+
+</table>
+
+<script>
+    function Cadastrar() {
+        window.location.href = "../Venda/Registrar";
+    }
+
+
+</script>
+
+
+<br /><br />
+<button class="btn btn-block btn-primary" type="button" onclick="Voltar()">Retornar para Lista de Clientes</button>
+
+<script>
+    function Voltar() {
+        window.location.href = '../../Cliente/Index';
+    }
+</script>

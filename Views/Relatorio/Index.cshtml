@@ -1,0 +1,22 @@
+﻿<h2>Relatórios do Sistema</h2>
+
+<button class="btn btn-block btn-primary" type="button" onclick="Reletorio('Vendas')">Vendas por Período</button>
+<button class="btn btn-block btn-warning" type="button" onclick="Reletorio('Vendas')">Vendas por Produto</button>
+<button class="btn btn-block btn-success" type="button" onclick="Reletorio('Vendas')">Vendas por Clientes</button>
+<button class="btn btn-block btn-lg" type="button" onclick="Reletorio('Grafico')">Graficos</button>
+
+<script>
+    function Reletorio(action) {
+        window.location.href = "../Relatorio/" + action;
+    }
+</script>
+
+
+<br /><br />
+<button class="btn btn-block btn-primary" type="button" onclick="Voltar()">Retornar para Menu</button>
+
+<script>
+    function Voltar() {
+        window.location.href = "../Home/Menu"
+    }
+</script>

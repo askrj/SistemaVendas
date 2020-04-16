@@ -1,0 +1,56 @@
+﻿<h3>Lista de Vendedores</h3>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>#</td>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var item in (List<VendedorModel>)ViewBag.ListaVendedores)
+            {
+                <tr>
+                    <td><button type="button" class="btn btn-warning" onclick="Editar(@item.Id)">Editar</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Id)">Excluir</button></td>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Email</td>
+                </tr>
+
+            }
+        }
+    </tbody>
+
+</table>
+<br />
+<button class="btn btn-block btn-primary" type="button" onclick="Cadastrar()">Cadastrar</button>
+
+<script>
+    function Cadastrar() {
+        window.location.href = "../Vendedor/Cadastro";
+    }
+
+    function Editar(id) {
+        window.location.href = "../Vendedor/Cadastro/" + id;
+    }
+
+    function Excluir(id) {
+        window.location.href = "../Vendedor/Excluir/" + id;
+    }
+</script>
+
+<br /><br />
+<button class="btn btn-block btn-primary" type="button" onclick="Voltar()">Retornar para Menu</button>
+
+<script>
+    function Voltar() {
+        window.location.href = "../Home/Menu"
+    }
+</script>
